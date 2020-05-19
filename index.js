@@ -42,6 +42,7 @@ class Airplane {
 
 class Person {
   constructor(name, age) {
+<<<<<<< HEAD
     this.age = age;
     this.name = name;
     this.stomach = [];
@@ -52,9 +53,25 @@ class Person {
           this.stomach.push(edible);
       }
     }
+=======
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
+  eat(edible) {
+    if (this.stomach.length < 10) {
+      return this.stomach.push(edible);
+    }
+    
+  }
+  poop() {
+    this.stomach = [];
+  }
+  toString() {
+    return `${this.name},${this.age}`;
+>>>>>>> a66e28b25aa6b809cefc4ca70d890a43127e6e93
   }
 }
-
 /*
   TASK 2
     - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -70,6 +87,7 @@ class Person {
 */
 
 class Car {
+<<<<<<< HEAD
   constructor(model, milesPerGallon){
     this.model = model;
     this.milesPerGallon = milesPerGallon;
@@ -90,7 +108,32 @@ class Car {
     this.odometer += distance;
     this.tank -= gallonsUsed;
   }
+=======
+    constructor(model, milesPerGallon) {
+      this.model = model;
+      this.milesPerGallon = milesPerGallon
+      this.tank = 0;
+      this.odometer = 0;
+    }
+    fill(gallons) {
+      this.tank = this.tank + gallons;
+    }
+    drive(distance) {
+      let maxDistance = this.tank * this.milesPerGallon;
+    if (distance < maxDistance){
+      this.odometer += distance;
+      this.tank -= distance/this.milesPerGallon;
+    } else if (distance >= maxDistance){
+      this.odometer += maxDistance;
+      this.tank -= maxDistance / this.milesPerGallon;
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
+
+  }
+
+>>>>>>> a66e28b25aa6b809cefc4ca70d890a43127e6e93
 }
+
 
 /*
   TASK 3
@@ -105,6 +148,7 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
+<<<<<<< HEAD
   constructor(info){
     this.name = info.name;
     this.age = info.age;
@@ -113,6 +157,16 @@ class Lambdasian {
   speak(){
     return `Hello my name is ${this.name}, I am from ${this.location}`
   }
+=======
+    constructor (attributes) {
+      this.name = attributes.name;
+      this.age = attributes.age;
+      this.location = attributes.location;  
+  }
+    speak() {
+      return  `Hello my name is ${this.name}, I am from ${this.location}`
+    }
+>>>>>>> a66e28b25aa6b809cefc4ca70d890a43127e6e93
 }
 
 /*
